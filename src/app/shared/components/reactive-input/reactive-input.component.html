@@ -1,0 +1,10 @@
+<label [for]="id" class="sr-only">{{ label | translate }}</label>
+<input
+  [type]="type"
+  [id]="id"
+  class="form-control"
+  [placeholder]="placeHolder | translate"
+  required
+  autofocus
+  [formControlName]="formControlName"
+/>

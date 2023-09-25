@@ -5,27 +5,21 @@
     class="form-signin w-50"
   >
         <h1 class="h3 mb-3 font-weight-normal">{{ "signInTitle" | translate }}</h1>
-        <label for="inputEmail" class="sr-only">{{ "email" | translate }}</label>
-      <input
+        
+        <etiya-input
+        id="email"
+        label="email"
         type="email"
-        id="inputEmail"
-        class="form-control"
-        [placeholder]="'email' | translate"
-        required
-        autofocus
+        placeHolder="email"
         formControlName="email"
-      />
-      <label for="inputPassword" class="sr-only">{{
-        "password" | translate
-      }}</label>
-      <input
+        />
+        <etiya-input
+        id="password"
+        label="password"
         type="password"
-        id="inputPassword"
-        class="form-control"
+        placeHolder="password"
         formControlName="password"
-        [placeholder]="'password' | translate"
-        required
-      />
+        />
       <div class="checkbox mb-3">
         <label>
             <input 
