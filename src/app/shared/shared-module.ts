@@ -3,12 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+
 @NgModule({
-  declarations: [],
+  declarations: [HomepageComponent, MainLayoutComponent, LoginComponent],
   imports: [
     CommonModule,
     SharedRoutingModule
-  ]
+  ],
+  exports: [MainLayoutComponent]
 })
 
 export class SharedModule { }

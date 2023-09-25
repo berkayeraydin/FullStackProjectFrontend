@@ -12,6 +12,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 @NgModule({
   declarations: [
     AppComponent
+    // Import ettiğim modüllerden sadece o modülün export ettiği alanları kullanabilirim.
   ],
   imports: [
     BrowserModule,
