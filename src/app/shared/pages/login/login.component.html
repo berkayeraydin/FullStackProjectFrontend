@@ -1,57 +1,34 @@
 <div class="container">
-
     <form class="form-signin">
-  
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  
-      <label for="inputEmail" class="sr-only">Email address</label>
-  
+        <h1 class="h3 mb-3 font-weight-normal">{{ "signInTitle" | translate }}</h1>
+        <label for="inputEmail" class="sr-only">{{ "email" | translate }}</label>
       <input
-  
         type="email"
-  
         id="inputEmail"
-  
         class="form-control"
-  
-        placeholder="Email address"
-  
+        [placeholder]="'email' | translate"
         required
-  
         autofocus
-  
       />
-  
-      <label for="inputPassword" class="sr-only">Password</label>
-  
+      <label for="inputPassword" class="sr-only">{{
+        "password" | translate
+      }}</label>
       <input
-  
         type="password"
-  
         id="inputPassword"
-  
         class="form-control"
-  
-        placeholder="Password"
-  
+        [placeholder]="'password' | translate"
         required
-  
       />
-  
       <div class="checkbox mb-3">
-  
-        <label> <input type="checkbox" value="remember-me" /> Remember me </label>
-  
+        <label>
+            <input type="checkbox" value="remember-me" />
+            {{ "rememberMe" | translate }}
+          </label>
       </div>
-  
       <button class="btn btn-lg btn-primary btn-block" type="submit">
-  
-        Sign in
-  
+        {{ "submit" | translate }}
       </button>
-  
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-  
     </form>
-  
   </div>

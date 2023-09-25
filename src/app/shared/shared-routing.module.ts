@@ -16,6 +16,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    data: { hideLayout: true }, // TODO: Hide Layout
   },
 ];
 
