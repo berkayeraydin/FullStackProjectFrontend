@@ -1,0 +1,12 @@
+<div class="card">
+    <img *ngIf="imgUrl" [src]="imgUrl" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">
+        {{ description }}
+      </p>
+      <p>{{ price | currency : "₺" }}</p>
+      <a href="#" class="btn btn-primary">Sepete Ekle</a>
+    </div>
+  </div>
+  
