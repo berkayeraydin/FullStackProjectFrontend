@@ -1,40 +1,48 @@
 <div class="d-flex w-100 h-100vh justify-content-center align-items-center">
   <form
-    (submit)="submitForm()"
-    [formGroup]="loginForm"
-    class="form-signin w-50"
+      (submit)="submitForm()"
+      [formGroup]="loginForm"
+      class="form-signin w-50"
   >
-        <h1 class="h3 mb-3 font-weight-normal">{{ "signInTitle" | translate }}</h1>
-        
-        <etiya-input
+  <h1 class="h3 mb-3 font-weight-normal">{{ "signInTitle" | translate }}</h1>
+  
+   
+  
+      <etiya-input
         id="email"
         label="email"
         type="email"
         placeHolder="email"
         formControlName="email"
         [formGroup]="loginForm"
-        />
-        <etiya-input
+      />
+  
+   
+  
+      <etiya-input
         id="password"
         label="password"
         type="password"
         placeHolder="password"
         formControlName="password"
-        formGroup]="loginForm"
-        />
+        [formGroup]="loginForm"
+      />
+  
+   
+  
       <div class="checkbox mb-3">
-        <label>
-            <input 
+  <label>
+  <input
             formControlName="rememberMe"
-            type="checkbox" 
-            value="remember-me" 
-            />
-            {{ "rememberMe" | translate }}
-          </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+            type="checkbox"
+            value="remember-me"
+          />
+          {{ "rememberMe" | translate }}
+  </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">
         {{ "submit" | translate }}
-      </button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-    </form>
+  </button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  </form>
   </div>

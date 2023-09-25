@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   submitForm() {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.invalid) {
-      console.log('Login Formu Hatalı iken gönderilmeye çalışıldı.');
       return;
     }
     console.log(this.loginForm.value);
