@@ -17,7 +17,6 @@ export class ReactiveInputComponent {
 
   hasValidationError(errorName: string): boolean {
     let errors = this.formGroup.controls[this.formControlName].errors;
-    console.log(errors);
     if (errors == null || !this.isTouched()) return false;
 
     return errors[errorName];
