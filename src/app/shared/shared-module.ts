@@ -13,7 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
     CommonModule,
     SharedRoutingModule
   ],
-  exports: [MainLayoutComponent]
+  exports: [MainLayoutComponent] // dış modüllerin kullanabileceği, dışarıya export edilen moduller
 })
 
 export class SharedModule { }
