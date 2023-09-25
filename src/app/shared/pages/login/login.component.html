@@ -1,5 +1,9 @@
-<div class="container">
-    <form class="form-signin">
+<div class="d-flex w-100 h-100vh justify-content-center align-items-center">
+  <form
+    (submit)="submitForm()"
+    [formGroup]="loginForm"
+    class="form-signin w-50"
+  >
         <h1 class="h3 mb-3 font-weight-normal">{{ "signInTitle" | translate }}</h1>
         <label for="inputEmail" class="sr-only">{{ "email" | translate }}</label>
       <input
@@ -9,6 +13,7 @@
         [placeholder]="'email' | translate"
         required
         autofocus
+        formControlName="email"
       />
       <label for="inputPassword" class="sr-only">{{
         "password" | translate
@@ -17,12 +22,17 @@
         type="password"
         id="inputPassword"
         class="form-control"
+        formControlName="password"
         [placeholder]="'password' | translate"
         required
       />
       <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" value="remember-me" />
+            <input 
+            formControlName="rememberMe"
+            type="checkbox" 
+            value="remember-me" 
+            />
             {{ "rememberMe" | translate }}
           </label>
       </div>
