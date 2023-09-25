@@ -4,5 +4,7 @@
     "email": "E-mail",
     "password": "Password",
     "rememberMe": "Remember Me",
-    "submit": "Submit"
+    "submit": "Submit",
+    "required": "{{field}} is required.",
+    "minLength": "{{field}} field should be minimum of {{min}} characters."
 }

@@ -25,13 +25,14 @@ export class LoginComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(3),
+        Validators.minLength(5),
       ]),
       rememberMe: new FormControl(false, []),
     });
 
   }
   submitForm() {
+    this.loginForm.markAllAsTouched();
     if (this.loginForm.invalid) {
       console.log('Login Formu Hatalı iken gönderilmeye çalışıldı.');
       return;

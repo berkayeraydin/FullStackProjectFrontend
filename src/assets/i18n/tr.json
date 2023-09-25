@@ -4,5 +4,8 @@
     "email": "E-posta",
     "password": "Şifre",
     "rememberMe": "Beni Hatırla",
-    "submit": "Gönder"
+    "submit": "Gönder",
+    "required": "{{field}} alanı zorunludur.",
+    "minLength": "{{field}} alanı minimum {{min}} karakterden oluşmalıdır."
+    
 }

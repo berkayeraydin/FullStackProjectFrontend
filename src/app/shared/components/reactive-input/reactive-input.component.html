@@ -6,7 +6,19 @@
     class="form-control"
     [placeholder]="placeHolder | translate"
     required
-    autofocus
     [formControlName]="formControlName"
   />
+  <span class="text-danger" *ngIf="hasValidationError('required')">{{
+    "required" | translate : { field: label | translate }
+  }}</span>
+  <span class="text-danger" *ngIf="hasValidationError('minlength')">
+    {{
+      "minLength"
+        | translate
+          : {
+              field: label | translate,
+              min: getErrorDetails("minlength").requiredLength
+            }
+    }}
+  </span>
 </div>

@@ -14,4 +14,22 @@ export class ReactiveInputComponent {
   @Input() formControlName!: string;
   @Input() formGroup!: FormGroup;
   @Input() type: string = 'text';
+
+  hasValidationError(errorName: string): boolean {
+    let errors = this.formGroup.controls[this.formControlName].errors;
+    console.log(errors);
+    if (errors == null || !this.isTouched()) return false;
+
+    return errors[errorName];
+  }
+
+  getErrorDetails(errorName: string) {
+    let errors = this.formGroup.controls[this.formControlName].errors;
+    if (errors == null) return {};
+    return errors[errorName];
+  }
+
+  isTouched() {
+    return this.formGroup.controls[this.formControlName].touched;
+  }
 }
