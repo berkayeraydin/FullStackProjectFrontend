@@ -13,11 +13,11 @@ import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
-    HomepageComponent, 
-    MainLayoutComponent, 
-    LoginComponent, 
+    HomepageComponent,
+    MainLayoutComponent,
+    LoginComponent,
     ReactiveInputComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +26,7 @@ import { RegisterComponent } from './pages/register/register.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [MainLayoutComponent] // dış modüllerin kullanabileceği, dışarıya export edilen moduller
+  exports: [MainLayoutComponent, ReactiveInputComponent], // dış modüllerin kullanabileceği, dışarıya export edilen modüller
 })
 
 export class SharedModule { }

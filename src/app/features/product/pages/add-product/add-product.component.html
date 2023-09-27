@@ -1,0 +1,25 @@
+<div class="container mt-5" *ngIf="addProductForm">
+    <form (submit)="submit()" [formGroup]="addProductForm">
+      <div class="form-group">
+        <label>Kategori</label>
+        <select formControlName="categoryId" class="form-select">
+          <option
+            *ngFor="let category of categories"
+            [value]="category.categoryId"
+          >
+            {{ category.categoryName }}
+          </option>
+        </select>
+      </div>
+  
+      <etiya-input
+        placeHolder="Ürün Adı"
+        label="Ürün Adı"
+        [formGroup]="addProductForm"
+        formControlName="productName"
+      ></etiya-input>
+  
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+  </div>
+  
