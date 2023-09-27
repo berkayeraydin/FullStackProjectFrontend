@@ -8,7 +8,7 @@ import { GetAllProductsModel } from '../models/getAllProductsModel';
   providedIn: 'root',
 })
 export class ProductService {
-  controllerUrl: string = environment.BASE_API_URL + 'products';
+  private controllerUrl: string = environment.BASE_API_URL + 'products';
   constructor(private httpClient: HttpClient) {}
 
   getAll(): Observable<GetAllProductsModel[]> {
