@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { GetAllProductsModel } from '../models/getAllProductsModel';
 import { AddProductModel } from '../models/addProductModel';
+import { UpdateProductModel } from '../models/updateProductModel';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +25,9 @@ export class ProductService {
 
   add(model: AddProductModel) {
     return this.httpClient.post(this.controllerUrl, model);
+  }
+
+  update(model: UpdateProductModel) {
+    return this.httpClient.put(this.controllerUrl, model);
   }
 }

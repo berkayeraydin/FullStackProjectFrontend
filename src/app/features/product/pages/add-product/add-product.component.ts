@@ -74,6 +74,12 @@ import {
       }
       if (this.productToEdit) {
       // TODO: Aradan sonra backend-frontend yazalım..
+      this.productService
+        .update(this.addProductForm.value)
+        .subscribe((response) => {
+          alert('Ürün başarıyla güncellendi..');
+          this.router.navigateByUrl('/product');
+        });
       } else {
       this.productService
         .add(this.addProductForm.value)
