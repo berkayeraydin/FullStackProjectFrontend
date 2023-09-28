@@ -1,22 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './shared/pages/homepage/homepage.component'
- 
+import { HomepageComponent } from './shared/pages/homepage/homepage.component';
+
 const routes: Routes = [
   {
     path: 'product',
     loadChildren: () =>
-    import('./features/product/product.module').then((m) => m.ProductModule),
+      import('./features/product/product.module').then((m) => m.ProductModule),
   },
   {
     path: 'order',
     loadChildren: () =>
-    import('./features/order/order.module').then((m) => m.OrderModule),
+      import('./features/order/order.module').then((m) => m.OrderModule),
+  },
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./features/cart/cart.module').then((m) => m.CartModule),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { SignalsWorkshopComponent } from './pages/signals-workshop/signals-workshop.component';
+import { SignalsFormComponent } from './pages/signals-form/signals-form.component';
 
 const routes: Routes = [
   {
@@ -17,17 +19,23 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    data: { hideLayout: true }, // TODO: Hide Layout
+    data: { hideLayout: true },
   },
   {
     path: 'register',
     component: RegisterComponent,
   },
+  {
+    path: 'signals',
+    component: SignalsWorkshopComponent,
+  },
+  {
+    path: 'signalforms',
+    component: SignalsFormComponent,
+  },
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-export class SharedRoutingModule { }
+export class SharedRoutingModule {}

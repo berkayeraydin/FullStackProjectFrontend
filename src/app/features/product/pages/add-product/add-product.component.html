@@ -1,48 +1,61 @@
 <div class="container mt-5" *ngIf="addProductForm">
-    <form (submit)="submit()" [formGroup]="addProductForm">
-
-      <etiya-input
+  <a class="btn btn-outline-danger mb-3" routerLink="/product">Listeye Dön</a>
+  <form (submit)="submit()" [formGroup]="addProductForm">
+    <etiya-input
       placeHolder="Ürün Adı"
       label="Ürün Adı"
       [formGroup]="addProductForm"
       formControlName="productName"
-      ></etiya-input>
+    ></etiya-input>
 
-      <div class="form-group">
-        <label>Kategori</label>
-        <select
+    <etiya-input
+      placeHolder="Ürün Fiyatı"
+      label="Ürün Fiyatı"
+      [formGroup]="addProductForm"
+      formControlName="unitPrice"
+    ></etiya-input>
+
+    <etiya-input
+      placeHolder="Ürün Stok"
+      label="Ürün Stok"
+      [formGroup]="addProductForm"
+      formControlName="unitsInStock"
+    ></etiya-input>
+
+    <div class="form-group">
+      <label>Kategori</label>
+      <select
         placeholder="Seçiniz"
         formControlName="categoryId"
         class="form-select"
       >
         <option value="0" disabled selected>Seçiniz</option>
-          <option
-            *ngFor="let category of categories"
-            [value]="category.categoryId"
-          >
-            {{ category.categoryName }}
-          </option>
-        </select>
-      </div>
-  
-      <div class="form-group">
-        <label>Supplier</label>
-        <select
-          placeholder="Seçiniz"
-          formControlName="supplierId"
-          class="form-select"
+        <option
+          *ngFor="let category of categories"
+          [value]="category.categoryId"
         >
-          <option value="0" disabled selected>Seçiniz</option>
-          <option
-            *ngFor="let supplier of suppliers"
-            [value]="supplier.supplierId"
-          >
-            {{ supplier.companyName }}
-          </option>
-        </select>
-      </div>
-  
-      <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
-  </div>
-  
+          {{ category.categoryName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Supplier</label>
+      <select
+        placeholder="Seçiniz"
+        formControlName="supplierId"
+        class="form-select"
+      >
+        <option value="0" disabled selected>Seçiniz</option>
+        <option
+          *ngFor="let supplier of suppliers"
+          [value]="supplier.supplierId"
+        >
+          {{ supplier.companyName }}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>

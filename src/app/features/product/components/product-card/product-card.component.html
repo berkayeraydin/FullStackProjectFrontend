@@ -1,13 +1,15 @@
 <div class="card">
-    <img *ngIf="imgUrl" [src]="imgUrl" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ title }}</h5>
-      <p class="card-text">
-        {{ description }}
-      </p>
-      <p>{{ price | currency : "₺" }}</p>
-      <a href="#" class="btn btn-primary">Sepete Ekle</a>
-      <a class="btn btn-secondary mx-3" [routerLink]="'update/' + id">Düzenle</a>
-    </div>
+  <img *ngIf="imgUrl" [src]="imgUrl" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">
+      {{ description }}
+    </p>
+    <p>{{ price | currency : "₺" }}</p>
+    <a class="btn btn-primary" (click)="addToCart()">Sepete Ekle</a>
+    <a class="btn btn-secondary mx-3" [routerLink]="'update/' + id">Düzenle</a>
+    <a class="btn btn-danger" (click)="deleteProduct()">Sil</a>
   </div>
-  
+</div>
+
+<!-- Order sayfası => Responsive (ekranda 3er 3er sıralanmış productlar vb..) -->

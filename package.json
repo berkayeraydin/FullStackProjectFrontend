@@ -1,5 +1,5 @@
 {
-  "name": "etiya-frontend-project",
+  "name": "etiya-fullstack-project",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,11 +18,17 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "bootstrap": "^5.3.2",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
+    "@ng-icons/bootstrap-icons": "^25.3.1",
+    "@ng-icons/core": "^25.3.1",
+    "@ngrx/store": "^16.2.0",
+    "@ngrx/store-devtools": "^16.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "bootstrap": "^5.3.2",
+    "ngx-socket-io": "^4.5.1",
+    "ngx-toastr": "^17.0.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

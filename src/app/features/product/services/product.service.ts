@@ -30,4 +30,8 @@ export class ProductService {
   update(model: UpdateProductModel) {
     return this.httpClient.put(this.controllerUrl, model);
   }
+
+  delete(id: number) {
+    return this.httpClient.delete(this.controllerUrl + '?id=' + id);
+  }
 }

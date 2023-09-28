@@ -1,51 +1,50 @@
 <div class="d-flex justify-content-center align-items-center h-100vh w-100">
-    <form *ngIf="registerForm" [formGroup]="registerForm">
-      <h3>Register Form</h3>
-      <etiya-input
-        [formGroup]="registerForm"
-        formControlName="name"
-        label="Name"
-        id="name"
-        placeHolder="Name"
-      />
-      <etiya-input
-        [formGroup]="registerForm"
-        formControlName="surname"
-        label="Surname"
-        id="surname"
-        placeHolder="Surname"
-      />
-  
-      <etiya-input
-        [formGroup]="registerForm"
-        formControlName="email"
-        label="Email"
-        id="email"
-        placeHolder="Email"
-        type="email"
-      />
-  
-      <etiya-input
-        [formGroup]="registerForm"
-        formControlName="password"
-        label="Password"
-        id="password"
-        placeHolder="Password"
-        type="password"
-      />
-  
-      <etiya-input
-        [formGroup]="registerForm"
-        formControlName="passwordConfirm"
-        label="Repeat Password"
-        id="passwordConfirm"
-        placeHolder="Password"
-        type="password"
-      />
-  
-      <button class="btn btn-primary w-100 my-3">
-        {{ "submit" | translate }}
-      </button>
-    </form>
-  </div>
-  
+  <form *ngIf="registerForm" [formGroup]="registerForm">
+    <h3>Register Form</h3>
+    <etiya-input
+      [formGroup]="registerForm"
+      formControlName="name"
+      label="Name"
+      id="name"
+      placeHolder="Name"
+    />
+    <etiya-input
+      [formGroup]="registerForm"
+      formControlName="surname"
+      label="Surname"
+      id="surname"
+      placeHolder="Surname"
+    />
+
+    <etiya-input
+      [formGroup]="registerForm"
+      formControlName="email"
+      label="Email"
+      id="email"
+      placeHolder="Email"
+      type="email"
+    />
+
+    <etiya-input
+      [formGroup]="registerForm"
+      formControlName="password"
+      label="Password"
+      id="password"
+      placeHolder="Password"
+      type="password"
+    />
+
+    <etiya-input
+      [formGroup]="registerForm"
+      formControlName="passwordConfirm"
+      label="Repeat Password"
+      id="passwordConfirm"
+      placeHolder="Password"
+      type="password"
+    />
+
+    <button class="btn btn-primary w-100 my-3">
+      {{ "submit" | translate }}
+    </button>
+  </form>
+</div>
