@@ -10,7 +10,8 @@ import {
   import { Category } from 'src/app/features/category/models/category';
   import { SupplierService } from 'src/app/features/supplier/services/supplier.service';
   import { Supplier } from 'src/app/features/supplier/models/supplier';
-  import { Router } from '@angular/router';
+  import { ActivatedRoute, Router } from '@angular/router';
+  import { GetAllProductsModel } from '../../models/getAllProductsModel';
   
   @Component({
     templateUrl: './add-product.component.html',
@@ -20,19 +21,37 @@ import {
     addProductForm!: FormGroup;
     categories: Category[] = [];
     suppliers: Supplier[] = [];
+    productToEdit!: GetAllProductsModel;
     constructor(
       private formBuilder: FormBuilder,
       private productService: ProductService,
       private categoryService: CategoryService,
       private supplierService: SupplierService,
-      private router: Router
+      private router: Router,
+      private activatedRoute: ActivatedRoute
     ) {}
     ngOnInit(): void {
       // formda gerekecek db bilgilerini çek / build form
       // kategoriler => veritabanın
       this.fetchCategories();
       this.fetchSuppliers();
-      this.buildForm();
+      
+      this.activatedRoute.params.subscribe((parameters) => {
+        if (parameters['id']) {
+          // ilgili id ile productin detaylarını çek.
+          // bu detaylar ile birlikte formu oluştur.
+          this.productService.getById(parameters['id']).subscribe((response) => {
+            this.productToEdit = response;
+            this.buildForm();
+          });
+        } else {
+          this.buildForm();
+        }
+      });
+  
+      // sayfa urlinde id gönderilmişse => update
+      // gönderilmemişse => add
+
     }
   
     fetchSuppliers() {
@@ -53,17 +72,31 @@ import {
         alert('Validasyon hatası');
         return;
       }
-      this.productService.add(this.addProductForm.value).subscribe((response) => {
-        alert('Ürün başarıyla eklendi');
-        this.router.navigateByUrl('/product');
-      });
+      if (this.productToEdit) {
+      // TODO: Aradan sonra backend-frontend yazalım..
+      } else {
+      this.productService
+        .add(this.addProductForm.value)
+        .subscribe((response) => {
+          alert('Ürün başarıyla eklendi');
+          this.router.navigateByUrl('/product');
+          });
+        }
     }
   
     buildForm() {
       this.addProductForm = this.formBuilder.group({
-        productName: new FormControl('', [Validators.required]),
-        supplierId: new FormControl(0, [Validators.min(1)]),
-        categoryId: new FormControl(0, [Validators.min(1)]),
+        productName: new FormControl(this.productToEdit?.name || '', [
+          Validators.required,
+        ]),
+        supplierId: new FormControl(
+          this.productToEdit?.supplier.supplierId || 0,
+          [Validators.min(1)]
+        ),
+        categoryId: new FormControl(
+          this.productToEdit?.category.categoryId || 0,
+          [Validators.min(1)]
+        ),
       });
     }
   }

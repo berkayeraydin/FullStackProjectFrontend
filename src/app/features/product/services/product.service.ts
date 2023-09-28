@@ -16,6 +16,12 @@ export class ProductService {
     return this.httpClient.get<GetAllProductsModel[]>(this.controllerUrl);
   }
 
+  getById(id: number): Observable<GetAllProductsModel> {
+    return this.httpClient.get<GetAllProductsModel>(
+      this.controllerUrl + '/getById?id=' + id
+    );
+  }
+
   add(model: AddProductModel) {
     return this.httpClient.post(this.controllerUrl, model);
   }
