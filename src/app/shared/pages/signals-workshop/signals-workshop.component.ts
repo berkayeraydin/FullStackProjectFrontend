@@ -23,9 +23,9 @@ export class SignalsWorkshopComponent implements OnInit {
 
   // signaller sadece basit typelar değil complex typelar ile de çalışır..
   user = signal<LoggedInUserModel>({
-    username: 'halitklyc',
-    firstName: 'Halit',
-    lastName: 'Kalaycı',
+    username: 'berkayeraydin',
+    firstName: 'Berkah',
+    lastName: 'Eraydin',
   });
 
   // signal tanımlama => signal([değer])
